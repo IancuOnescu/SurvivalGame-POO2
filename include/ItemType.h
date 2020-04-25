@@ -1,37 +1,33 @@
 #ifndef ITEMTYPE_H
 #define ITEMTYPE_H
 #include "AgentType.h"
+#include <string>
+#include <cstdlib>
+
+class AgentType;
 
 class ItemType
 {
     std::pair<int, int>position_;
-    bool taken_;
-    std::string classifType_;
+    const std::string classifType_;
     float modifAmount_;
     public:
-        ItemType();
-        void SetTaken(bool);
-        bool GetTaken();
-        void SetClassifType(std::string);
+        ItemType(std::pair<int, int>, std::string);
         std::string GetClassifType();
-        void SetModifAmount(float value);
+        float RandomizeModifAmount();
         float GetModifAmount();
-        void SetPosition(std::pair)
-        std::pair GetPosition();
-        virtual void TakeEffect(AgentType&) = 0;
+        void SetModifAmount(float);
+        std::pair<int, int> GetPosition();
+        virtual void TakeEffect(AgentType*) = 0;
         virtual ~ItemType();
 };
 
-inline void ItemType::SetPosition(std::pair<int, int> pos){position_ = pos;}
-
 inline std::pair<int, int> ItemType::GetPosition(){return position_;}
 
-inline void ItemType::SetTaken(bool taken){taken_ = taken;}
-
-inline bool ItemType::GetTaken(){return taken_;}
-
-inline void ItemType::SetClassifType(std::string type){classifType_ = type}
-
 inline std::string ItemType::GetClassifType(){return classifType_;}
+
+inline float ItemType::GetModifAmount(){return modifAmount_;}
+
+inline void ItemType::SetModifAmount(float val){modifAmount_ = val;}
 
 #endif // ITEMTYPE_H
