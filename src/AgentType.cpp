@@ -1,12 +1,13 @@
 #include "../include/AgentType.h"
 
-AgentType::AgentType(float dmg, float healt, std::pair<int, int> pattern, std::pair<int, int> pos):damagePoints_(dmg), healthPoints_(healt), movementPattern_(pattern), position_(pos){
+AgentType::AgentType(float dmg, float health, std::pair<int, int> pattern, std::pair<int, int> pos):damagePoints_(dmg), healthPoints_(health), movementPattern_(pattern), position_(pos){
 }
 
 float AgentType::ApplyItemsModifier(float damageToModify, std::string itemType){
     for(auto item : inventory_[itemType]){
+        item->SetModifAmount(damageToModify);
         item->TakeEffect(this);
-//        damageToModify = item->GetModifier(damageToModify);
+        damageToModify += item->GetModifAmount();
     }
     return damageToModify;
 }
@@ -35,14 +36,21 @@ void AgentType::ChangePosition(){
 }
 
 void AgentType::StartOfFightModifier(){
-    for(auto item: inventory_["Immediate"])
+    for(auto item: inventory_["Immediate"]){
         item->TakeEffect(this);
+        delete item;
+    }
+    inventory_["Immediate"].clear();
     return;
 }
 
 void AgentType::AddToInventory(ItemType* item){
     inventory_[item->GetClassifType()].push_back(item);
     return;
+}
+
+void AgentType::EndOfFightModifier(){
+    healthPoints_ += 100;
 }
 
 AgentType::~AgentType()

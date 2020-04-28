@@ -36,6 +36,7 @@ void PsychicAgent::MidFightModifier(){
 }
 
 void PsychicAgent::EndOfFightModifier(){
+    AgentType::EndOfFightModifier();
     SetDamagePoints(GetDamagePoints()*1.3);
     return;
 }
