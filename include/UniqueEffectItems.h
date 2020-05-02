@@ -1,7 +1,7 @@
 #ifndef UNIQUEEFFECTITEMS_H
 #define UNIQUEEFFECTITEMS_H
 
-#include <ItemType.h>
+#include "ItemType.h"
 
 
 class UniqueEffectItems : public ItemType

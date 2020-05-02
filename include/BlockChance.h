@@ -1,7 +1,7 @@
 #ifndef BLOCKCHANCE_H
 #define BLOCKCHANCE_H
 
-#include <UniqueEffectItems.h>
+#include "UniqueEffectItems.h"
 
 
 class BlockChance : public UniqueEffectItems

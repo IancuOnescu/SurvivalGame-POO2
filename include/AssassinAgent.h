@@ -1,7 +1,7 @@
 #ifndef ASSASSINAGENT_H
 #define ASSASSINAGENT_H
 
-#include <AgentType.h>
+#include "AgentType.h"
 
 
 class AssassinAgent : public AgentType

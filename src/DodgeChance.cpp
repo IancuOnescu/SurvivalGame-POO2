@@ -1,4 +1,4 @@
-#include "DodgeChance.h"
+#include "../include/DodgeChance.h"
 
 DodgeChance::DodgeChance(std::pair<int, int> pos):UniqueEffectItems(20, pos, "Deffensive"){
 }

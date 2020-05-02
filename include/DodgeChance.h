@@ -1,7 +1,7 @@
 #ifndef DODGECHANCE_H
 #define DODGECHANCE_H
 
-#include <UniqueEffectItems.h>
+#include "UniqueEffectItems.h"
 
 
 class DodgeChance : public UniqueEffectItems

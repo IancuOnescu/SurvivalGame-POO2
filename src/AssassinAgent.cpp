@@ -1,4 +1,4 @@
-#include "AssassinAgent.h"
+#include "../include/AssassinAgent.h"
 
 AssassinAgent::AssassinAgent(std::pair<int, int> pos):AgentType(110, 250, std::make_pair(1, 1), pos), enemyHP_(0), enemyInitialHP_(0), enemyHPAfterHit_(0), initialHP_(0){
 }
@@ -45,9 +45,9 @@ void AssassinAgent::MidFightModifier(){
 }
 
 void AssassinAgent::EndOfFightModifier(){
-    AgentType::EndOfFightModifier();
     if(enemyInitialHP_ > initialHP_)
         SetHealthPoints(enemyInitialHP_);
+    AgentType::EndOfFightModifier();
     return;
 }
 

@@ -1,7 +1,7 @@
 #ifndef MAGEAGENT_H
 #define MAGEAGENT_H
 
-#include <AgentType.h>
+#include "AgentType.h"
 
 
 class MageAgent : public AgentType

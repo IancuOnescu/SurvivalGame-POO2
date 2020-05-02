@@ -1,4 +1,4 @@
-#include "MageAgent.h"
+#include "../include/MageAgent.h"
 
 MageAgent::MageAgent(std::pair<int, int> pos):AgentType(90, 340, std::make_pair(1, 3), pos), enemyDMG_(0){
 }

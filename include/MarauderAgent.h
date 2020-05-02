@@ -1,7 +1,7 @@
 #ifndef MARAUDERAGENT_H
 #define MARAUDERAGENT_H
 
-#include <AgentType.h>
+#include "AgentType.h"
 
 
 class MarauderAgent : public AgentType

@@ -1,4 +1,4 @@
-#include "UniqueEffectItems.h"
+#include "../include/UniqueEffectItems.h"
 
 UniqueEffectItems::UniqueEffectItems(int chance, std::pair<int, int> pos, std::string cls):ItemType(pos, cls), chancePercentage_(chance){
 }

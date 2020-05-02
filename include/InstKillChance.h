@@ -1,7 +1,7 @@
 #ifndef INSTKILLCHANCE_H
 #define INSTKILLCHANCE_H
 
-#include <UniqueEffectItems.h>
+#include "UniqueEffectItems.h"
 
 
 class InstKillChance : public UniqueEffectItems

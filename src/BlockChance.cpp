@@ -1,4 +1,4 @@
-#include "BlockChance.h"
+#include "../include/BlockChance.h"
 
 BlockChance::BlockChance(std::pair<int, int> pos):UniqueEffectItems(20, pos, "Deffensive"){
 }

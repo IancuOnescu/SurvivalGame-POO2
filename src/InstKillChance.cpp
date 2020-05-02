@@ -1,4 +1,4 @@
-#include "InstKillChance.h"
+#include "../include/InstKillChance.h"
 
 InstKillChance::InstKillChance(std::pair<int, int> pos):UniqueEffectItems(5, pos, "Offensive"){
 }

@@ -1,4 +1,4 @@
-#include "CriticalChance.h"
+#include "../include/CriticalChance.h"
 
 CriticalChance::CriticalChance(std::pair<int, int> pos):UniqueEffectItems(10, pos, "Offensive"){
 }

@@ -1,7 +1,7 @@
 #ifndef CRITICALCHANCE_H
 #define CRITICALCHANCE_H
 
-#include <UniqueEffectItems.h>
+#include "UniqueEffectItems.h"
 
 
 class CriticalChance : public UniqueEffectItems

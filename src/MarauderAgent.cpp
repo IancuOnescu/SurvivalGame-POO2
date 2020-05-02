@@ -1,4 +1,4 @@
-#include "MarauderAgent.h"
+#include "../include/MarauderAgent.h"
 
 MarauderAgent::MarauderAgent(std::pair<int, int> pos):AgentType(80, 410, std::make_pair(2, 2), pos), damageTaken_(0){
 }
