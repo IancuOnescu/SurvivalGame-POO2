@@ -24,6 +24,9 @@ void MapManager::Display() const{
         std::cout<<"\n";
         DisplayDash(2*size_+1);
     }
+    for(unsigned int i=0; i<2*size_+1; i++)
+        std::cout<<"#";
+    std::cout<<"\n";
 }
 
 bool MapManager::IsPositionMarked(const std::pair<int, int> pos) const{
@@ -32,6 +35,14 @@ bool MapManager::IsPositionMarked(const std::pair<int, int> pos) const{
 
 void MapManager::MarkPosition(const std::pair<int, int> pos, const char symbol){
     map_[pos.first][pos.second] = symbol;
+}
+
+void MapManager::UnmarkPosition(const std::pair<int, int> pos){
+    map_[pos.first][pos.second] = ' ';
+}
+
+char MapManager::GetSymbolAtPos(std::pair<int, int> pos) const{
+    return map_[pos.first][pos.second];
 }
 
 MapManager::~MapManager(){

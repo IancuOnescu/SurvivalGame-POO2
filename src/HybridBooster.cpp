@@ -1,6 +1,6 @@
 #include "../include/HybridBooster.h"
 
-HybridBooster::HybridBooster(std::pair<int, int> pos):ItemType(pos, "Immediate"){
+HybridBooster::HybridBooster(std::pair<int, int> pos):ItemType(pos, "Immediate", 'y'){
 }
 
 void HybridBooster::TakeEffect(AgentType* agent){

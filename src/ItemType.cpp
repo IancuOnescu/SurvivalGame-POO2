@@ -1,6 +1,6 @@
 #include "../include/ItemType.h"
 
-ItemType::ItemType(std::pair<int, int> pos, std::string cls):position_(pos), classifType_(cls){
+ItemType::ItemType(std::pair<int, int> pos, std::string cls, char symbol):position_(pos), classifType_(cls), symbol_(symbol){
     SetModifAmount(RandomizeModifAmount());
 }
 

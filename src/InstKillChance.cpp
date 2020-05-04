@@ -1,6 +1,6 @@
 #include "../include/InstKillChance.h"
 
-InstKillChance::InstKillChance(std::pair<int, int> pos):UniqueEffectItems(5, pos, "Offensive"){
+InstKillChance::InstKillChance(std::pair<int, int> pos):UniqueEffectItems(5, pos, "Offensive", 'i'){
 }
 
 void InstKillChance::TakeEffect(AgentType* agent){

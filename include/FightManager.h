@@ -14,7 +14,8 @@ class FightManager
         bool IsDead(AgentType*) const;
         void StartFight();
         void EndFight();
-        AgentType* GetLoser();
+        AgentType* GetLoser() const;
+        AgentType* GetWinner() const;
         virtual ~FightManager();
 };
 

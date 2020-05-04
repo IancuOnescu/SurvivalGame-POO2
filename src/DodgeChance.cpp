@@ -1,6 +1,6 @@
 #include "../include/DodgeChance.h"
 
-DodgeChance::DodgeChance(std::pair<int, int> pos):UniqueEffectItems(20, pos, "Deffensive"){
+DodgeChance::DodgeChance(std::pair<int, int> pos):UniqueEffectItems(20, pos, "Deffensive", 'c'){
 }
 
 void DodgeChance::TakeEffect(AgentType* agent){

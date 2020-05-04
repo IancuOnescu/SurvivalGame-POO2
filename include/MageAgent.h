@@ -10,7 +10,7 @@ class MageAgent : public AgentType
     public:
         MageAgent(std::pair<int, int>);
         void DealDamage(AgentType*);
-        void ChangeMovementPattern();
+        void ChangeMovementPattern(int);
         void StartOfFightModifier();
         void MidFightModifier();
         void EndOfFightModifier();

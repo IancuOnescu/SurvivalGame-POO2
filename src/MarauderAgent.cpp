@@ -1,6 +1,6 @@
 #include "../include/MarauderAgent.h"
 
-MarauderAgent::MarauderAgent(std::pair<int, int> pos):AgentType(80, 410, std::make_pair(2, 2), pos), damageTaken_(0){
+MarauderAgent::MarauderAgent(std::pair<int, int> pos):AgentType(80, 410, std::make_pair(2, 2), pos, 'R'), damageTaken_(0){
 }
 
 void MarauderAgent::TakeDamage(float damageTaken){
@@ -9,10 +9,9 @@ void MarauderAgent::TakeDamage(float damageTaken){
 }
 
 
-void MarauderAgent::ChangeMovementPattern(){
+void MarauderAgent::ChangeMovementPattern(int sizeOfMap){
     std::pair<int, int> movementPattern_ = GetMovementPattern();
     std::pair<int, int> position_ = GetPosition();
-    int sizeOfMap = 10;
     if(movementPattern_.first + position_.first >= sizeOfMap)
         movementPattern_.first = -1;
     if(movementPattern_.first + position_.first < 0)

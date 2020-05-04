@@ -1,6 +1,6 @@
 #include "../include/MageAgent.h"
 
-MageAgent::MageAgent(std::pair<int, int> pos):AgentType(90, 340, std::make_pair(1, 3), pos), enemyDMG_(0){
+MageAgent::MageAgent(std::pair<int, int> pos):AgentType(90, 340, std::make_pair(1, 3), pos, 'M'), enemyDMG_(0){
 }
 
 void MageAgent::DealDamage(AgentType* enemyAgent){
@@ -10,10 +10,9 @@ void MageAgent::DealDamage(AgentType* enemyAgent){
     SetDamagePoints(GetDamagePoints() - (enemyDMG_ * 0.1));
 }
 
-void MageAgent::ChangeMovementPattern(){
+void MageAgent::ChangeMovementPattern(int sizeOfMap){
     std::pair<int, int> movementPattern_ = GetMovementPattern();
     std::pair<int, int> position_ = GetPosition();
-    int sizeOfMap = 10;
     if(movementPattern_.first + position_.first >= sizeOfMap)
         movementPattern_.first = -2;
     if(movementPattern_.first + position_.first < 0)

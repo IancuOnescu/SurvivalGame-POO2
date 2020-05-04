@@ -8,7 +8,7 @@ class PsychicAgent:public AgentType
     public:
         PsychicAgent(std::pair<int, int>);
         void DealDamage(AgentType*);
-        void ChangeMovementPattern();
+        void ChangeMovementPattern(int);
         void StartOfFightModifier();
         void MidFightModifier();
         void EndOfFightModifier();

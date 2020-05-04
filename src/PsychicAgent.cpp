@@ -1,6 +1,6 @@
 #include "../include/PsychicAgent.h"
 
-PsychicAgent::PsychicAgent(std::pair<int, int> pos):AgentType(100, 300, std::make_pair(1, 1), pos), numberOfHits_(0){
+PsychicAgent::PsychicAgent(std::pair<int, int> pos):AgentType(100, 300, std::make_pair(1, 1), pos, 'P'), numberOfHits_(0){
 }
 
 void PsychicAgent::DealDamage(AgentType* enemyAgent){
@@ -9,10 +9,9 @@ void PsychicAgent::DealDamage(AgentType* enemyAgent){
     return;
 }
 
-void PsychicAgent::ChangeMovementPattern(){
+void PsychicAgent::ChangeMovementPattern(int sizeOfMap){
     std::pair<int, int> movementPattern_ = GetMovementPattern();
     std::pair<int, int> position_ = GetPosition();
-    int sizeOfMap = 10;
     if(movementPattern_.first + position_.first >= sizeOfMap ||
        movementPattern_.first + position_.first < 0)
             movementPattern_.first *= (-1);

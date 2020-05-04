@@ -1,6 +1,6 @@
 #include "../include/AgentType.h"
 
-AgentType::AgentType(float dmg, float health, std::pair<int, int> pattern, std::pair<int, int> pos):damagePoints_(dmg), healthPoints_(health), movementPattern_(pattern), position_(pos){
+AgentType::AgentType(float dmg, float health, std::pair<int, int> pattern, std::pair<int, int> pos, char symbol):damagePoints_(dmg), healthPoints_(health), movementPattern_(pattern), position_(pos), symbol_(symbol){
 }
 
 float AgentType::ApplyItemsModifier(float damageToModify, std::string itemType){
@@ -25,11 +25,11 @@ void AgentType::TakeDamage(float damageTaken){
     return;
 }
 
-void AgentType::ChangePosition(){
-    int sizeOfMap = 10;
+void AgentType::ChangePosition(const MapManager& map){
+    int sizeOfMap = map.GetSize();
     if(movementPattern_.first+position_.first >= sizeOfMap || movementPattern_.second+position_.second >= sizeOfMap
        || movementPattern_.first+position_.first < 0 || movementPattern_.second+position_.second < 0)
-        ChangeMovementPattern();
+        ChangeMovementPattern(sizeOfMap);
     position_.first = movementPattern_.first + position_.first;
     position_.second = movementPattern_.second + position_.second;
     return;
@@ -55,9 +55,8 @@ void AgentType::EndOfFightModifier(){
 
 AgentType::~AgentType()
 {
-    damagePoints_ = 0;
-    healthPoints_ = 0;
-    movementPattern_ = std::make_pair(0, 0);
-    position_ = std::make_pair(-1, -1);
+    for(auto it : inventory_)
+        for(auto item : it.second)
+            delete item;
     inventory_.clear();
 }

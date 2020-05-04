@@ -1,12 +1,11 @@
 #include "../include/AssassinAgent.h"
 
-AssassinAgent::AssassinAgent(std::pair<int, int> pos):AgentType(110, 250, std::make_pair(1, 1), pos), enemyHP_(0), enemyInitialHP_(0), enemyHPAfterHit_(0), initialHP_(0){
+AssassinAgent::AssassinAgent(std::pair<int, int> pos):AgentType(110, 250, std::make_pair(1, 1), pos, 'A'), enemyHP_(0), enemyInitialHP_(0), enemyHPAfterHit_(0), initialHP_(0){
 }
 
-void AssassinAgent::ChangeMovementPattern(){
+void AssassinAgent::ChangeMovementPattern(int sizeOfMap){
     std::pair<int, int> movementPattern_ = GetMovementPattern();
     std::pair<int, int> position_ = GetPosition();
-    int sizeOfMap = 10;
     if(movementPattern_.first + position_.first >= sizeOfMap)
         movementPattern_.first = -1;
     if(movementPattern_.first + position_.first < 0)

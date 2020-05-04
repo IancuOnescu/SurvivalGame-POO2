@@ -8,7 +8,7 @@ class UniqueEffectItems : public ItemType
 {
     int chancePercentage_;
     public:
-        UniqueEffectItems(int, std::pair<int, int>, std::string);
+        UniqueEffectItems(int, std::pair<int, int>, std::string, char);
         virtual ~UniqueEffectItems();
         bool TestChance();
 };

@@ -10,7 +10,7 @@ class MarauderAgent : public AgentType
     public:
         MarauderAgent(std::pair<int, int>);
         void TakeDamage(float);
-        void ChangeMovementPattern();
+        void ChangeMovementPattern(int);
         void StartOfFightModifier();
         void MidFightModifier();
         void EndOfFightModifier();

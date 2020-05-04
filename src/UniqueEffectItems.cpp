@@ -1,6 +1,6 @@
 #include "../include/UniqueEffectItems.h"
 
-UniqueEffectItems::UniqueEffectItems(int chance, std::pair<int, int> pos, std::string cls):ItemType(pos, cls), chancePercentage_(chance){
+UniqueEffectItems::UniqueEffectItems(int chance, std::pair<int, int> pos, std::string cls, char symbol):ItemType(pos, cls, symbol), chancePercentage_(chance){
 }
 
 bool UniqueEffectItems::TestChance(){

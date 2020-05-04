@@ -1,6 +1,6 @@
 #include "../include/CriticalChance.h"
 
-CriticalChance::CriticalChance(std::pair<int, int> pos):UniqueEffectItems(10, pos, "Offensive"){
+CriticalChance::CriticalChance(std::pair<int, int> pos):UniqueEffectItems(10, pos, "Offensive", 'c'){
 }
 
 void CriticalChance::TakeEffect(AgentType* agent){

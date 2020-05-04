@@ -15,6 +15,8 @@ class MapManager
         unsigned int GetSize() const;
         bool IsPositionMarked(const std::pair<int, int>) const;
         void MarkPosition(const std::pair<int, int>, const char);
+        void UnmarkPosition(const std::pair<int, int>);
+        char GetSymbolAtPos(std::pair<int, int>) const;
         virtual ~MapManager();
 };
 
